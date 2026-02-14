@@ -1,0 +1,131 @@
+{
+  "project_name": "Quiet Wealth - Ultra-Luxury Real Estate",
+  "version": "1.0",
+  "brand_identity": {
+    "core_values": ["Quiet Wealth", "Discretion", "Confidence", "Timelessness"],
+    "emotional_tone": "Cinematic, Slow, Intentional, Exclusive",
+    "visual_style": "Noir Architecture, Matte Textures, Editorial Grid, Golden Hour"
+  },
+  "design_system": {
+    "typography": {
+      "headings": {
+        "family": "Cormorant Garamond, serif",
+        "usage": "H1, H2, H3, Hero Titles",
+        "weights": ["300", "400", "500", "600"],
+        "attributes": "tracking-tight leading-[0.9] italic-variants",
+        "source": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap"
+      },
+      "body": {
+        "family": "Manrope, sans-serif",
+        "usage": "Paragraphs, UI Elements, Navigation",
+        "weights": ["200", "300", "400"],
+        "attributes": "tracking-wide leading-relaxed"
+      },
+      "rules": "Never use bold weights > 600. Use italics for emphasis in headings to create an 'editorial' voice."
+    },
+    "colors": {
+      "palette": {
+        "midnight": "#050505",
+        "charcoal": "#0F0F0F",
+        "deep_emerald": "#041C15",
+        "champagne": "#E5D0AC",
+        "stone": "#A8A29E",
+        "ivory": "#F5F5F4",
+        "faded_gold": "#C5A059"
+      },
+      "backgrounds": {
+        "default": "#050505",
+        "card": "#0F0F0F",
+        "overlay": "rgba(5, 5, 5, 0.8)"
+      },
+      "text": {
+        "primary": "#F5F5F4",
+        "secondary": "#A8A29E",
+        "muted": "#57534E",
+        "accent": "#E5D0AC"
+      },
+      "gradients": "No gradients. Use solid matte colors or subtle noise textures."
+    },
+    "spacing": {
+      "scale": "2x standard. Use p-12, p-24, p-32 for section padding.",
+      "grid_gap": "gap-8 or gap-12",
+      "container": "max-w-[1800px] mx-auto px-6 md:px-12"
+    },
+    "radius": {
+      "default": "0px (Sharp edges for ultra-luxury)",
+      "buttons": "0px or 1px (Micro-radius only)",
+      "cards": "0px"
+    },
+    "shadows": {
+      "default": "none",
+      "hover": "0 20px 40px -10px rgba(0,0,0,0.5)"
+    }
+  },
+  "layout_strategies": {
+    "grid_system": "Bento Grid (Asymmetric). Never equal columns. Use col-span-4 vs col-span-8.",
+    "hero_section": "Full viewport height (100vh). Image dominates. Text is minimal and anchored bottom-left or centered-fade.",
+    "property_list": "Masonry or Staggered Grid. Images aspect ratio: 4:5 or 16:9 mixed.",
+    "navigation": "Minimal floating header. Background blur-md. Logo left, Menu right (text or hamburger).",
+    "footer": "Massive padding (py-32). Simple columns. Large contact CTA."
+  },
+  "motion_guidelines": {
+    "library": "framer-motion",
+    "scrolling": "lenis (MANDATORY). Smooth, weighty scroll.",
+    "page_load": {
+      "effect": "Soft fade-in from black. Text rises 10px.",
+      "duration": "0.9s",
+      "ease": "easeOut"
+    },
+    "hover_states": {
+      "cards": "Scale image 1.03x (very subtle). Text opacity 100%.",
+      "buttons": "Fill effect or Underline slide. No bounce."
+    },
+    "transitions": "Stagger children by 0.1s. Opacity 0 -> 1. Y 20px -> 0px."
+  },
+  "component_rules": {
+    "buttons": {
+      "style": "Outline or Ghost. Thin borders (1px). Uppercase text. Tracking-widest.",
+      "interaction": "Solid fill on hover. Transition duration 500ms."
+    },
+    "cards": {
+      "style": "Image-first. Text below image. Minimal metadata (Price, Location).",
+      "hover": "Image dims slightly, text brightens."
+    },
+    "forms": {
+      "style": "Minimal. Bottom border only. No background. Large text inputs.",
+      "font": "Serif for input text."
+    },
+    "images": {
+      "treatment": "Desaturate slightly (80%). Full saturation on hover. Add noise overlay if possible."
+    }
+  },
+  "assets": {
+    "icons": {
+      "library": "lucide-react",
+      "style": "stroke-width={1} (Ultra Thin)",
+      "color": "currentColor"
+    },
+    "images": {
+      "hero_architecture": "https://images.unsplash.com/photo-1762430047169-76d78fb430bf?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "detail_wood_stone": "https://images.unsplash.com/photo-1732544504373-01e2f4a6493f?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "interior_mood": "https://images.unsplash.com/photo-1770625467989-465591ffac5b?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "dark_city": "https://images.unsplash.com/photo-1762430047160-db0e2670c533?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "car_detail": "https://images.unsplash.com/photo-1762377374676-2c50a517a59f?crop=entropy&cs=srgb&fm=jpg&q=85"
+    }
+  },
+  "implementation_steps": [
+    "Install dependencies: framer-motion, @studio-freight/lenis (or lenis/react), clsx, tailwind-merge",
+    "Update tailwind.config.js with 'midnight', 'champagne', 'stone' colors and font families.",
+    "Add Google Fonts link to public/index.html head.",
+    "Create global 'SmoothScroll' wrapper component using Lenis.",
+    "Build 'Layout' component with persistent Navigation and Footer.",
+    "Develop 'PropertyCard' and 'Hero' components using the defined motion guidelines.",
+    "Ensure all interactive elements have data-testid attributes."
+  ],
+  "universal_guidelines": {
+    "theme": "Dark Mode Only",
+    "accessibility": "Ensure contrast ratio > 4.5:1 for text. Use Aria labels for icon buttons.",
+    "testing": "All interactive elements MUST have data-testid attributes.",
+    "code_style": "Functional components. Typed props (if TS, else PropTypes). Modular CSS/Tailwind."
+  }
+}
